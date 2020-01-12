@@ -14,9 +14,9 @@ def shorten_url(request):
 
         if form.is_valid():
             original_url = form.cleaned_data['original_url']
-            suggested_suffix = form.cleaned_data['suggested_suffix']
+            suggested_url_suffix = form.cleaned_data['suggested_url_suffix']
             try:
-                f = ShortUrl.objects.create(suggested_url_suffix = suggested_suffix, original_url = original_url)
+                f = ShortUrl.objects.create(suggested_url_suffix = suggested_url_suffix, original_url = original_url)
                 f.save()
             except ValueError:
                 return HttpResponse('Invalid form')

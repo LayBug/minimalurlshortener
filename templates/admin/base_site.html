@@ -1,0 +1,9 @@
+{% extends "admin/base.html" %}
+
+{% block title %} Admin Panel | {{ site_title|default:_('Url Shortener admin') }}{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">Url Shortener Admin</a></h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

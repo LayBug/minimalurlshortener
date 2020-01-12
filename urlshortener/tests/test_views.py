@@ -16,7 +16,7 @@ class ViewsTests(TestCase):
         self.assertTrue(url.generated_url)
 
     def test_success_page(self):
-        response = self.client.post('/', {'original_url':'http://bing.com', 'suggested_suffix' : 'bing', })
+        response = self.client.post('/', {'original_url':'http://bing.com', 'suggested_url_suffix' : 'bing', })
         self.assertEqual(response.status_code, 302)
         self.assertEqual(response.url, '/urls/1/')
         response = self.client.get('/urls/1/')
